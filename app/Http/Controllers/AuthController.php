@@ -50,16 +50,18 @@ class AuthController extends Controller
         }
 
 }
+
 public function login_post (Request $request)
 {
     if(Auth::attempt(['email'=>$request->email,'password'=>$request->password],true)){
         if(Auth::user()->is_role =='1'){
             return redirect()->intended('admin/dashboard');
         }else{
-return redirect('/')->with('error','No HR aVAILABLE PLEASE CHEK');
+            return redirect('/')->with('error','No HR available please check');
         }
-}else{
+    }else{
     return redirect()->back()->with('error','Please enter the correct credentials');
 }
 }
+
 }
