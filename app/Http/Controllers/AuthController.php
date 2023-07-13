@@ -64,4 +64,9 @@ public function login_post (Request $request)
 }
 }
 
+public function logout(){
+    Auth::logout();
+    return redirect(url('/'));
+}
+
 }
