@@ -34,7 +34,7 @@
                                 <label class="col-sm-2 col-form-label">First name <span
                                         style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="name" class="form-control" required
+                                    <input type="text" value="{{old('name')}}" name="name" class="form-control" required
                                         placeholder="Enter first name">
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                                 <label class="col-sm-2 col-form-label">Last name <span
                                         style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="last_name" class="form-control" required
+                                    <input type="text" value="{{old('last_name')}}" name="last_name" class="form-control" required
                                         placeholder="Enter last name">
                                 </div>
                             </div>
@@ -51,8 +51,9 @@
                                 <label class="col-sm-2 col-form-label">Email <span
                                         style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="email" name="email" class="form-control" required
+                                    <input type="email" value="{{old('email')}}" name="email" class="form-control" required
                                         placeholder="Enter email">
+                                        <span style="color:red">{{$errors->first('email')}}</span>
                                 </div>
                             </div>
 
@@ -60,8 +61,9 @@
                                 <label class="col-sm-2 col-form-label">Phone number <span
                                         style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="phone_number" class="form-control" required
+                                    <input type="number" value="{{old('phone_number')}}" name="phone_number" class="form-control" required
                                         placeholder="Enter phone number">
+                                        <span style="color:red">{{$errors->first('phone_number')}}</span>
                                 </div>
                             </div>
 
@@ -69,7 +71,7 @@
                                 <label class="col-sm-2 col-form-label">Hire date <span
                                         style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="date" name="hire_date" class="form-control" required
+                                    <input type="date" value="{{old('hire_date')}}" name="hire_date" class="form-control" required
                                         placeholder="Enter hire date">
                                 </div>
                             </div>
@@ -90,16 +92,16 @@
                                 <label class="col-sm-2 col-form-label">Salary <span
                                         style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="salary" class="form-control" required
+                                    <input type="text" value="{{old('salary')}}" name="salary" class="form-control" required
                                         placeholder="Enter salary">
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Comission Pct <span
+                                <label class="col-sm-2 col-form-label">Commission Pct <span
                                         style="color:red;">*</span></label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="comission_pct" class="form-control" required
+                                    <input type="text" value="{{old('commission_pct')}}" name="commission_pct" class="form-control" required
                                         placeholder="Enter commission pcty">
                                 </div>
                             </div>
