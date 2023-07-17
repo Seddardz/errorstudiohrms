@@ -63,6 +63,13 @@ class User extends Authenticatable
             $return =$return->where('last_name','like','%'.Request::get('last_name').'%');
 
         }
+
+        if(!empty(Request::get('email')))
+        {
+            $return =$return->where('email','like','%'.Request::get('email').'%');
+
+        }
+
         //search box end
         $return = $return->orderBy('id','desc')
                 ->paginate(15);

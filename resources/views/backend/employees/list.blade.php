@@ -47,6 +47,12 @@
                                                 placeholder="Last name">
                                         </div>
 
+                                        <div class="form-group col-md-2">
+                                            <label>Email</label>
+                                            <input type="email" name="email" value="{{Request()->email}}" class="form-control"
+                                                placeholder="email">
+                                        </div>
+
                                         <div class="form-group col-md-3">
                                             <button class="btn btn-primary" type="submit"
                                                 style="margin-top:30px">Search</button>
