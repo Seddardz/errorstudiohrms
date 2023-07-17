@@ -9,7 +9,8 @@ use App\Models\User;
 class EmployeesController extends Controller
 {
     public function index(Request $request){
-        return view ('backend.employees.list');
+        $data['getRecord']=User::getRecord();
+        return view ('backend.employees.list',$data);
     }
 
     public function add(Request $request){
@@ -42,7 +43,7 @@ class EmployeesController extends Controller
             $user->department_id    =trim($request->department_id);
             $user->is_role=0;
             $user->save();
-            
+
 return redirect ('admin/employees')->with('success','Employees successfully register.');
     }
 
