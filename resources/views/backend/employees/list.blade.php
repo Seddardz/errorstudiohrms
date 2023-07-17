@@ -47,13 +47,13 @@
                                                 placeholder="Last name">
                                         </div>
 
-                                        <div class="form-group col-md-2">
+                                        <div class="form-group col-md-3">
                                             <label>Email</label>
                                             <input type="email" name="email" value="{{Request()->email}}" class="form-control"
                                                 placeholder="email">
                                         </div>
 
-                                        <div class="form-group col-md-3">
+                                        <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit"
                                                 style="margin-top:30px">Search</button>
                                             <a href="{{ url('admin/employees') }}" class="btn btn-success"
@@ -82,7 +82,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($getRecord as $value)
+                                            @forelse ($getRecord as $value)
                                             <tr>
                                                 <td>{{$value->id}}</td>
                                                 <td>{{$value->name}}</td>
@@ -91,12 +91,16 @@
                                                 <td>{{!empty($value->is_role)?'HR':'Employees'}}</td>
 
                                                 <td>
-                                                    <a href="" class="btn btn-info">View</a>
-                                                    <a href="" class="btn btn-primary">Edit</a>
-                                                    <a href="" class="btn btn-danger">Delete</a>
+                                                    <a href="" class="btn-sm btn-info">View</a>
+                                                    <a href="" class="btn-sm btn-primary">Edit</a>
+                                                    <a href="" class="btn-sm btn-danger">Delete</a>
                                                 </td>
                                             </tr>
-                                            @endforeach
+                                                @empty
+                                                <tr>
+                                                    <td colspan="100%">No results found</td>
+                                                </tr>
+                                            @endforelse
                                         </tbody>
                                     </table>
                                     <div style="padding:10px; float:right;">
