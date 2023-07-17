@@ -31,19 +31,19 @@
 
                                         <div class="form-group col-md-1">
                                             <label>ID</label>
-                                            <input type="text" name="id" class="form-control"
+                                            <input type="text" name="id" class="form-control" value="{{Request()->id}}"
                                                 placeholder="Id">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>First Name</label>
-                                            <input type="text" name="" class="form-control"
+                                            <input type="text" name="name" value="{{Request()->name}}" class="form-control"
                                                 placeholder="First name">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>Last Name</label>
-                                            <input type="text" name="" class="form-control"
+                                            <input type="text" name="last_name" value="{{Request()->last_name}}" class="form-control"
                                                 placeholder="Last name">
                                         </div>
 
