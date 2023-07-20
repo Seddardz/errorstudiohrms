@@ -91,7 +91,7 @@
                                                 <td>{{!empty($value->is_role)?'HR':'Employees'}}</td>
 
                                                 <td>
-                                                    <a href="" class="btn-sm btn-info">View</a>
+                                                    <a href="{{url('admin/employees/view/'.$value->id)}}" class="btn-sm btn-info">View</a>
                                                     <a href="" class="btn-sm btn-primary">Edit</a>
                                                     <a href="" class="btn-sm btn-danger">Delete</a>
                                                 </td>
