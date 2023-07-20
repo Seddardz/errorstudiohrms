@@ -78,4 +78,10 @@ return redirect ('admin/employees')->with('success','Employees successfully regi
 
         return redirect('admin/employees')->with('success', 'Employees successfully updated.');
     }
+
+    public function delete($id){
+$recordDelete=User::find($id);
+$recordDelete->delete();
+return redirect()->back()->with('error','Record succecfully deleted');
+    }
 }
