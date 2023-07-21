@@ -38,6 +38,7 @@ Route::group(['middleware'=>'admin'],function(){
     // Job Start
     Route::get('admin/jobs',[JobsController::class,'index']);
     Route::get('admin/jobs/add',[JobsController::class,'add']);
+    Route::post ('admin/jobs/add',[JobsController::class,'add_post']);
 });
 
 Route::get('logout',[AuthController::class,'logout']);
