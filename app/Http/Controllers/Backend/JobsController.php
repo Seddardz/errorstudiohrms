@@ -10,7 +10,8 @@ use App\Models\JobsModel;
 class JobsController extends Controller
 {
     public function index(Request $request){
-        return view ('backend.jobs.list');
+        $data['getRecord']=JobsModel::getRecord();
+        return view ('backend.jobs.list',$data);
     }
 
     public function add(Request $request){

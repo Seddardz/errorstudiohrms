@@ -83,14 +83,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-
+                                            @forelse ($getRecord as $value)
                                             <tr>
-                                                <td>1</td>
-                                                <td>job title</td>
-                                                <td>100</td>
-                                                <td>300</td>
-                                                <td>12/12/2023</td>
-                                                <td>31/01/2024</td>
+                                                <td>{{$value->id}}</td>
+                                                <td>{{$value->job_title}}</td>
+                                                <td>{{$value->min_salary}}</td>
+                                                <td>{{$value->max_salary}}</td>
+                                                <td>{{date('d-m-Y H:i:s',strtotime($value->created_at))}}</td>
 
                                                 <td>
                                                     <a href="" class="btn-sm btn-info">View</a>
@@ -99,9 +98,11 @@
                                                 </td>
                                             </tr>
 
-                                                <tr>
-                                                    <td colspan="100%">No results found</td>
-                                                </tr>
+                                            @empty
+                                            <tr>
+                                                <td colspan="100%">No results found</td>
+                                            </tr>
+                                        @endforelse
 
                                         </tbody>
                                     </table>
