@@ -12,4 +12,8 @@ class JobsController extends Controller
     public function index(Request $request){
         return view ('backend.jobs.list');
     }
+
+    public function add(Request $request){
+        return view ('backend.jobs.add');
+    }
 }
