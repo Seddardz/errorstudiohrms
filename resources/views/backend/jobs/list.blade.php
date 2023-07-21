@@ -78,7 +78,6 @@
                                                 <th>min salary</th>
                                                 <th>max salary</th>
                                                 <th>created at</th>
-                                                <th>updated at</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -92,7 +91,7 @@
                                                 <td>{{date('d-m-Y H:i:s',strtotime($value->created_at))}}</td>
 
                                                 <td>
-                                                    <a href="" class="btn-sm btn-info">View</a>
+                                                    <a href="{{url('admin/jobs/view/'.$value->id)}}" class="btn-sm btn-info">View</a>
                                                     <a href="" class="btn-sm btn-primary">Edit</a>
                                                     <a href="" onclick="return confirm('Are you sure you want to delete?')" class="btn-sm btn-danger">Delete</a>
                                                 </td>
