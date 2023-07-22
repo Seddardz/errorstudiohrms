@@ -64,4 +64,10 @@ class JobsController extends Controller
     return redirect ('admin/jobs')->with('success','Job successfully updated.');
     }
 
+    public function delete($id){
+        $recordDelete=JobsModel::find($id);
+        $recordDelete->delete();
+        return redirect()->back()->with('error','Record succecfully deleted');
+            }
+
 }
