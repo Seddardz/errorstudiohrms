@@ -26,7 +26,7 @@
                             <div class="card-header">
                                 <h3 class="card-title">Add Jobs</h3>
                             </div>
-                            <form class="form-horizontal" method="post" action=""
+                            <form class="form-horizontal" method="post" action="{{url('admin/jobs/edit/'.$getRecord->id)}}"
                                 enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="card-body">
