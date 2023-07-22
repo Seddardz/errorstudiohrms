@@ -44,7 +44,7 @@
                                         <label class="col-sm-2 col-form-label">Min salary <span
                                                 style="color:red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('job_title') }}" name="min_salary"
+                                            <input type="number" value="{{ old('min_salary') }}" name="min_salary"
                                                 class="form-control" required placeholder="Enter min salary">
                                         </div>
                                     </div>
@@ -53,7 +53,7 @@
                                         <label class="col-sm-2 col-form-label">Max salary <span
                                                 style="color:red;">*</span></label>
                                         <div class="col-sm-10">
-                                            <input type="number" value="{{ old('job_title') }}" name="max_salary"
+                                            <input type="number" value="{{ old('max_salary') }}" name="max_salary"
                                                 class="form-control" required placeholder="Enter max salary">
                                         </div>
                                     </div>
