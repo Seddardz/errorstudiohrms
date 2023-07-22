@@ -56,6 +56,7 @@ return redirect ('admin/employees')->with('success','Employees successfully regi
 
     public function edit($id){
         $data['getRecord']=User::find($id);
+        $data['getJobs']=JobsModel::getRecord();
         return view('backend.employees.edit',$data);
     }
 

@@ -75,4 +75,8 @@ class User extends Authenticatable
                 ->paginate(15);
         return $return;
     }
+
+    public function get_job_single(){
+return $this->belongsTo(JobsModel::class,'job_id');
+    }
 }
