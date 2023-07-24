@@ -10,6 +10,11 @@
                         <h1>Jobs</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6" style="text-align: right;">
+                        <form action="{{ url('admin/jobs_export') }}" method="get">
+                            <input type="text" name="start_date" value="{{ Request()->start_date }}">
+                            <input type="text" name="end_date" value="{{ Request()->end_date }}">
+                        </form>
+
                         <a href="{{ url('admin/jobs/add') }}" class="btn btn-primary">Add jobs</a>
                     </div><!-- /.col -->
                 </div><!-- /.row -->
@@ -31,36 +36,38 @@
 
                                         <div class="form-group col-md-1">
                                             <label>ID</label>
-                                            <input type="text" name="id" class="form-control" value="{{Request()->id}}"
-                                                placeholder="Id">
+                                            <input type="text" name="id" class="form-control"
+                                                value="{{ Request()->id }}" placeholder="Id">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>Job Title</label>
-                                            <input type="text" name="job_title" value="{{Request()->job_title}}" class="form-control"
-                                                placeholder="job title">
+                                            <input type="text" name="job_title" value="{{ Request()->job_title }}"
+                                                class="form-control" placeholder="job title">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>min salary</label>
-                                            <input type="text" name="min_salary" value="{{Request()->min_salary}}" class="form-control"
-                                                placeholder="min salary">
+                                            <input type="text" name="min_salary" value="{{ Request()->min_salary }}"
+                                                class="form-control" placeholder="min salary">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>max salary</label>
-                                            <input type="text" name="max_salary" value="{{Request()->max_salary}}" class="form-control"
-                                                placeholder="max salary">
+                                            <input type="text" name="max_salary" value="{{ Request()->max_salary }}"
+                                                class="form-control" placeholder="max salary">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>From Date</label>
-                                            <input type="date" name="start_date" value="{{Request()->start_date}}" class="form-control">
+                                            <input type="date" name="start_date" value="{{ Request()->start_date }}"
+                                                class="form-control">
                                         </div>
 
                                         <div class="form-group col-md-3">
                                             <label>To Date</label>
-                                            <input type="date" name="end_date" value="{{Request()->end_date}}" class="form-control">
+                                            <input type="date" name="end_date" value="{{ Request()->end_date }}"
+                                                class="form-control">
                                         </div>
 
                                         <div class="form-group col-md-2">
@@ -93,25 +100,29 @@
                                         </thead>
                                         <tbody>
                                             @forelse ($getRecord as $value)
-                                            <tr>
-                                                <td>{{$value->id}}</td>
-                                                <td>{{$value->job_title}}</td>
-                                                <td>{{$value->min_salary}}</td>
-                                                <td>{{$value->max_salary}}</td>
-                                                <td>{{date('d-m-Y H:i:s',strtotime($value->created_at))}}</td>
+                                                <tr>
+                                                    <td>{{ $value->id }}</td>
+                                                    <td>{{ $value->job_title }}</td>
+                                                    <td>{{ $value->min_salary }}</td>
+                                                    <td>{{ $value->max_salary }}</td>
+                                                    <td>{{ date('d-m-Y H:i:s', strtotime($value->created_at)) }}</td>
 
-                                                <td>
-                                                    <a href="{{url('admin/jobs/view/'.$value->id)}}" class="btn-sm btn-info">View</a>
-                                                    <a href="{{url('admin/jobs/edit/'.$value->id)}}" class="btn-sm btn-primary">Edit</a>
-                                                    <a href="{{url('admin/jobs/delete/'.$value->id)}}" onclick="return confirm('Are you sure you want to delete?')" class="btn-sm btn-danger">Delete</a>
-                                                </td>
-                                            </tr>
+                                                    <td>
+                                                        <a href="{{ url('admin/jobs/view/' . $value->id) }}"
+                                                            class="btn-sm btn-info">View</a>
+                                                        <a href="{{ url('admin/jobs/edit/' . $value->id) }}"
+                                                            class="btn-sm btn-primary">Edit</a>
+                                                        <a href="{{ url('admin/jobs/delete/' . $value->id) }}"
+                                                            onclick="return confirm('Are you sure you want to delete?')"
+                                                            class="btn-sm btn-danger">Delete</a>
+                                                    </td>
+                                                </tr>
 
                                             @empty
-                                            <tr>
-                                                <td colspan="100%">No results found</td>
-                                            </tr>
-                                        @endforelse
+                                                <tr>
+                                                    <td colspan="100%">No results found</td>
+                                                </tr>
+                                            @endforelse
 
                                         </tbody>
                                     </table>
