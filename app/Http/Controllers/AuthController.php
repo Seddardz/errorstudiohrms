@@ -21,7 +21,7 @@ class AuthController extends Controller
     {
         return view('register');
     }
-    
+
     public function register_post(Request $request)
     {
         $user =request()->validate([
@@ -30,7 +30,7 @@ class AuthController extends Controller
             'password'=>'required|min:6',
             'confirm_password'=>'required_with:password|same:password|min:6',
             ]);
-            
+
         $user = new User;
         $user->name = trim($request->name);
         $user->email = trim($request->email);
