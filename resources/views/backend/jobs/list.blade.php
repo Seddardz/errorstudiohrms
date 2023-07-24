@@ -53,6 +53,16 @@
                                                 placeholder="max salary">
                                         </div>
 
+                                        <div class="form-group col-md-3">
+                                            <label>From Date</label>
+                                            <input type="date" name="start_date" value="{{Request()->start_date}}" class="form-control">
+                                        </div>
+
+                                        <div class="form-group col-md-3">
+                                            <label>To Date</label>
+                                            <input type="date" name="end_date" value="{{Request()->end_date}}" class="form-control">
+                                        </div>
+
                                         <div class="form-group col-md-2">
                                             <button class="btn btn-primary" type="submit"
                                                 style="margin-top:30px">Search</button>

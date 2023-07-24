@@ -37,6 +37,12 @@ class JobsModel extends Model
 
         }
 
+        if(!empty(Request::get('start_date')) && !empty(Request::get('end_date')))
+        {
+            $return =$return->where('jobs.created_at', '>=',Request::get('start_date'))->where('jobs.created_at','<=',Request::get('end_date'));
+
+        }
+
         //search box end
         $return = $return->orderBy('id','desc')
                 ->paginate(15);
