@@ -39,7 +39,7 @@ class EmployeesController extends Controller
             $user->phone_number     =trim($request->phone_number);
             $user->hire_date        =trim($request->hire_date);
             $user->job_id           =trim($request->job_id);
-            $user->salary           =trim($request->nsalary);
+            $user->salary           =trim($request->salary);
             $user->commission_pct   =trim($request->commission_pct);
             $user->manager_id       =trim($request->manager_id);
             $user->department_id    =trim($request->department_id);
