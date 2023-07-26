@@ -15,7 +15,7 @@ class EmployeesController extends Controller
     }
 
     public function add(Request $request){
-        $data['getJobs']=JobsModel::getRecord();
+        $data['getJobs']=JobsModel::getRecord($request);
         return view ('backend.employees.add',$data);
     }
 
@@ -56,7 +56,7 @@ return redirect ('admin/employees')->with('success','Employees successfully regi
 
     public function edit($id){
         $data['getRecord']=User::find($id);
-        $data['getJobs']=JobsModel::getRecord();
+        $data['getJobs']=JobsModel::get();
         return view('backend.employees.edit',$data);
     }
 
