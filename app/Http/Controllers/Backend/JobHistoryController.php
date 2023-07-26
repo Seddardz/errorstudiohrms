@@ -17,6 +17,8 @@ class JobHistoryController extends Controller
     }
 
     public function add(Request $request){
+        //si vous voulez obtenir touts les enregistrements
+        //$data['getEmployees']=User::get();
         $data['getEmployees']=User::where('is_role','=',0)->get();
         $data['getJobs']=JobsModel::get();
         return view ('backend.job_history.add',$data);
