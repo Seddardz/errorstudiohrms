@@ -43,7 +43,7 @@
                                         @forelse ($getRecord as $value)
                                             <tr>
                                                 <td>{{ $value->id }}</td>
-                                                <td>{{ $value->employee_id }}</td>
+                                                <td>{{ !empty($value->get_user_name_single->name)? $value->get_user_name_single->name:'' }} {{ !empty($value->get_user_name_single->name)? $value->get_user_name_single->name:'' }}</td>
                                                 <td>{{ date('d-m-Y',strtotime($value->start_date)) }}</td>
                                                 <td>{{ date('d-m-Y',strtotime($value->end_date)) }}</td>
                                                 <td>{{ $value->job_id }}</td>

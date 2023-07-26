@@ -16,4 +16,8 @@ $return=self::select('job_history.*')
 ->paginate(20);
 return $return;
     }
+
+    public function get_user_name_single(){
+        return $this->belongsTo(User::class ,"employee_id");
+    }
 }
