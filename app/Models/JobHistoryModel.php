@@ -20,4 +20,8 @@ return $return;
     public function get_user_name_single(){
         return $this->belongsTo(User::class ,"employee_id");
     }
+
+    public function get_job_single(){
+        return $this->belongsTo(JobsModel::class,'job_id');
+            }
 }
