@@ -36,7 +36,10 @@
                                                 style="color:red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select class="form-control" name="employee_id">
-                                                <option value="">Employees</option>
+                                                <option value="">Select Employees name</option>
+                                                @foreach ($getEmployees as $value_employee )
+                                                <option value="{{$value_employee->id}}">{{$value_employee->name}}</option>
+                                            @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -67,7 +70,7 @@
                                                 <option value="">Select Job Name</option>
                                                 @foreach ($getJobs as $value_job )
                                                 <option value="{{$value_job->id}}">{{$value_job->job_title}}</option>
-                                            @endforeach
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>
@@ -77,7 +80,9 @@
                                                 style="color:red;">*</span></label>
                                         <div class="col-sm-10">
                                             <select class="form-control" name="department_id">
-                                                <option value="">Employees</option>
+                                                <option value="">Select Department Name</option>
+                                                <option value="1">Dev Department</option>
+                                                <option value="2">Bdm Department</option>
                                             </select>
                                         </div>
                                     </div>
